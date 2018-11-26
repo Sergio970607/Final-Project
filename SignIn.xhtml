@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Sign in in PetLife</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link href="Css/BackgroundPages.css" REL="StyleSheet"/>
+    </h:head>
+    <h:body>
+        <div class="menu">
+            <span class="title">PetLife</span>
+            <div id="start"/>
+            <span id="subtitle">I LOVE ANIMALS</span>
+            <a href="PetLife.xhtml"><b>Home</b></a>
+            <a href="LogIn.xhtml"><b>Log In</b></a>            
+        </div>
+        <div id="welcome">
+            <h1>Please, complete the values to access to PetLife</h1>   
+        </div>
+        <f:view>
+            <h:form>
+                <div class="textfield">
+                    <span id="text1">Email</span> <h:inputText value="#{signInController.email}"  required="true" class="textstyle" /><br/><br/>
+                    <span id="text2">Password</span> <h:inputSecret value="#{signInController.password}" class="textstyle" required="true" /><br/><br/>
+                    <span id="text3">Number of pets</span> <h:inputText value="#{signInController.numberofpets}" class="textstyle" required="true"/><br/><br/>
+                    <span id="text4">Type of pet</span> 
+                    <div id="box">
+                        <input type="checkbox" value="dog" name="typepet">Dog</input>
+                        <input type="checkbox" value="cat" name="typepet">Cat</input>
+                        <input type="checkbox" value="mouse" name="typepet">Mouse</input>
+                        <input type="checkbox" value="fish" name="typepet">Fish</input>
+                    </div>
+                </div>
+                <div id="button">
+                    <h:commandButton value="Continue" action="#{signInController.verify()}" class="btn btn-text-primary" />
+                </div>
+            </h:form> 
+        </f:view>
+
+        <f:view>
+            <h:form>
+                <div id="button2">
+                    <h:commandButton value="Cancel" action="PetLife.xhtml" class="btn btn-text-primary" />
+                </div>
+
+            </h:form>
+        </f:view>
+        <div class="finalpage">
+            <img class="bottomimage" src="Images/BottomImage.png"/>               
+            <span class="bottom">PetLife</span>
+            <div id="final"/>
+        </div>
+    </h:body>
+</html>
+
